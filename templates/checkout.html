@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>License Key Checkout</title>
+</head>
+<body>
+    <h1>Purchase a License Key</h1>
+    <form id="payment-form">
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <button id="checkout-button">Checkout</button>
+    </form>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe("{{ public_key }}");
+
+        document.getElementById("checkout-button").addEventListener("click", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+
+            const response = await fetch("/create-checkout-session", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            const session = await response.json();
+            if (session.error) {
+                alert(session.error);
+                return;
+            }
+
+            await stripe.redirectToCheckout({ sessionId: session.id });
+        });
+    </script>
+</body>
+</html>
