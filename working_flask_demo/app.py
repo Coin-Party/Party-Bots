@@ -11,8 +11,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Stripe API keys (replace with your keys from environment variables)
-stripe.api_key = os.getenv("STRIPE_SECRET_KEY", "sk_test_51QM6VNGCcYURSIrvAf46MdSm6YreckKIUovZTSwmTwx7jvqgTMQoiy1ZQMBr5CkdUqtcVwdnPavIEG1Etv27zpty00TprrkIXZ")
-STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY", "pk_test_51QM6VNGCcYURSIrvgcaZhOKsRiklESu8fpAHT8KhmSFjhZll7lqKAYgiAwNaLw0HWxsR6JdvZLt3hJUGfZChEkHR00yGWOPcpo")
+stripe.api_key = os.getenv("TEST_STRIPE_SECRET_KEY")
+STRIPE_PUBLIC_KEY = os.getenv("TEST_STRIPE_PUBLIC_KEY")
 
 # Database models
 class LicenseKey(db.Model):
