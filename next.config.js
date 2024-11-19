@@ -5,8 +5,8 @@ const isProd = process.env.NODE_ENV === 'production'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: isProd ? "/Party-Bot-Site" : "",
-  assetPrefix: isProd ? "/Party-Bot-Site" : "",
+  basePath: isProd ? "/Party-Bots" : "",
+  assetPrefix: isProd ? "/Party-Bots" : "",
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md'],
   experimental: {
