@@ -1,13 +1,11 @@
-import Image from 'next/image'
-
-import { Button } from '@/components/Button'
-import { HeroBackground } from '@/components/HeroBackground'
-import blurCyanImage from '@/images/blur-cyan.png'
-import blurIndigoImage from '@/images/blur-indigo.png'
-import logo from '@/images/logo.png'
-import { CodeSample } from './CodeSample'
-import { useState } from 'react'
-
+import Image from 'next/image';
+import { Button } from '@/components/Button';
+import { HeroBackground } from '@/components/HeroBackground';
+import blurCyanImage from '@/images/blur-cyan.png';
+import blurIndigoImage from '@/images/blur-indigo.png';
+import logo from '@/images/logo.png';
+import { CodeSample } from './CodeSample';
+import { useState, useEffect } from 'react';
 
 export function TrafficLightsIcon(props) {
     return (
@@ -16,41 +14,53 @@ export function TrafficLightsIcon(props) {
             <circle cx="21" cy="5" r="4.5" />
             <circle cx="37" cy="5" r="4.5" />
         </svg>
-    )
+    );
 }
 
 export function Hero() {
-    const [loading, setLoading] = useState(false);
-    const [versionData, setVersionData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [windowsVersionLink, setWindowsVersionLink] = useState(null);
+    const [unixVersionLink, setUnixVersionLink] = useState(null);
+    const [error, setError] = useState(null);
 
-    const handleGetLatestVersion = async () => {
-        setLoading(true);
-        try {
-            // Placeholder URL for AWS Lambda function
-            const response = await fetch('https://example.com/lambda/latest-version', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    // Placeholder payload
-                    key: 'value',
-                }),
-            });
+    useEffect(() => {
+        const fetchLatestVersions = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch('https://kxl4fcxtqmkiaiikyny4y27bbi0dntkc.lambda-url.us-east-1.on.aws', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+
+                if (data.windows) {
+                    setWindowsVersionLink(data.windows.download_url);
+                } else if (data.windows_error) {
+                    setError(`Windows Error: ${data.windows_error}`);
+                }
+
+                if (data.unix) {
+                    setUnixVersionLink(data.unix.download_url);
+                } else if (data.unix_error) {
+                    setError(`Unix Error: ${data.unix_error}`);
+                }
+            } catch (error) {
+                console.error('There was an error fetching the latest versions:', error);
+                setError('Failed to fetch the latest versions.');
+            } finally {
+                setLoading(false);
             }
+        };
 
-            const data = await response.json();
-            setVersionData(data);
-            console.log('Latest version data:', data); // For now, just log the response
-        } catch (error) {
-            console.error('There was an error fetching the latest version:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
+        fetchLatestVersions();
+    }, []); // Empty dependency array means it runs once on mount
 
     return (
         <div className="overflow-hidden bg-slate-900 dark:-mb-32 dark:mt-[-4.5rem] dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
@@ -69,19 +79,28 @@ export function Hero() {
                                 />
                             </p>
                             <div className="mt-8 flex gap-4 md:justify-center lg:justify-center">
-                                <Button onClick={handleGetLatestVersion} disabled={loading}>
-                                    {loading ? 'Loading...' : 'Get The Latest Version'}
+                                <Button
+                                    href={windowsVersionLink}
+                                    disabled={loading || !windowsVersionLink}
+                                >
+                                    {loading ? 'Loading...' : 'Windows'}
                                 </Button>
-                                <Button href="https://github.com/paulegradie/Party-Bots-Site" variant="secondary">
+                                <Button
+                                    href={unixVersionLink}
+                                    disabled={loading || !unixVersionLink}
+                                >
+                                    {loading ? 'Loading...' : 'Unix'}
+                                </Button>
+                                {/* <Button href="https://github.com/paulegradie/Party-Bots-Site" variant="secondary">
                                     Get Previous Versions
-                                </Button>
+                                </Button> */}
                             </div>
+                            {error && (
+                                <div className="mt-4 text-red-500">
+                                    {error}
+                                </div>
+                            )}
                         </div>
-                        {versionData && (
-                            <div className="mt-4 text-white">
-                                Latest Version: {versionData.version || 'N/A'}
-                            </div>
-                        )}
                     </div>
                     <div className="relative lg:static xl:pl-10">
                         <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 [mask-image:linear-gradient(transparent,white,white)] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:left-[calc(50%+14rem)] lg:right-0 lg:-top-32 lg:-bottom-32 lg:[mask-image:none] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
@@ -94,9 +113,5 @@ export function Hero() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
-
-
-
-

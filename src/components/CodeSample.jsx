@@ -7,32 +7,24 @@ const config = `{
     "user_id": "",
     "license_key": "",
     "demo_mode": true,
-    "live_mode": true,
-    "concurrent_mode": true,
-    "database": "sqlite:///trading_bot.demo.db",
-    "min_trust_fund_balance": 500.00,
-    "max_purchase_allowed": 300.0,
-    "risk_apetite": 1.0,
-    "gain_sale_threshold_pct": 4.0,
-    "loss_sale_threshold_pct": 50.0,
-    "sleep_duration": 3600,
+    "connection_string": "sqlite:///trading_bot.db",
+    "minimum_trust_fund_balance": 0.00,
+    "amount_of_AUD_to_invest": 100.0,
+    "the_percent_gain_to_sell_at": 4.0,
+    "the_percent_loss_to_sell_at": 50.0,
     "asset_codes": [
         "ETH",
         "BTC",
-        "ADA"
+        "XRP",
+        "LTC"
     ],
-    "max_bots": 2,
+    "max_bots_for_given_currency": 2,
     "exchange_secrets": {
-        "binance": {
-            "BINANCE_APIKEY": "",
-            "BINANCE_SECRET": ""
-        },
         "swyftx": {
             "SWYFTX_APIKEY": "",
             "SWYFTX_JWT": ""
         }
-    },
-    "ml_model_dir": "./ml_models/version1/models"
+    }
 }
 `;
 
