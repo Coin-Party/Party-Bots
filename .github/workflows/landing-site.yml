@@ -1,4 +1,4 @@
-name: Deploy Party Bots Site Documentation Website
+name: Deploy Party Bots Site
 
 on:
   # Runs on pushes targeting the default branch
