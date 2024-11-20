@@ -6,7 +6,7 @@ import blurIndigoImage from '@/images/blur-indigo.png';
 import logo from '@/images/logo.png';
 import { CodeSample } from './CodeSample';
 import { useState, useEffect } from 'react';
-
+import DownloadSection from '@/components/DownloadButton';
 export function TrafficLightsIcon(props) {
     return (
         <svg aria-hidden="true" viewBox="0 0 42 10" fill="none" {...props}>
@@ -79,6 +79,9 @@ export function Hero() {
                                 />
                             </p>
                             <div className="mt-8 flex gap-4 md:justify-center lg:justify-center">
+                                <DownloadSection windowsVersionLink={windowsVersionLink} unixVersionLink={unixVersionLink} loading={loading} />
+                            </div>
+                            {/* <div className="mt-8 flex gap-4 md:justify-center lg:justify-center">
                                 <Button
                                     href={windowsVersionLink}
                                     disabled={loading || !windowsVersionLink}
@@ -94,7 +97,7 @@ export function Hero() {
                                 {/* <Button href="https://github.com/paulegradie/Party-Bots-Site" variant="secondary">
                                     Get Previous Versions
                                 </Button> */}
-                            </div>
+                            {/* </div> */} 
                             {error && (
                                 <div className="mt-4 text-red-500">
                                     {error}
