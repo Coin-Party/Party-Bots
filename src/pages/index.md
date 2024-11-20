@@ -2,8 +2,34 @@
 title: 'Welcome!'
 ---
 
-Welcome to Party Bots! Lets get ready to party 🤘
+# Welcome to Party Bots! 🎉
 
-Party Bots is a sophisticated system for automating profitable currency excanges on the cryto market. It acts as a bolt-on to various crytpo exchanges, and manages the trading of currencies on your behalf. With this sytem, you are empowered to convert an initial investment of capital into perhaps over ten thousand dollars per year. 
+Get ready to join the trading revolution with Party Bots — your ultimate companion for automated cryptocurrency trading. Let’s turn trading into a celebration of profit! 🚀
 
-The initial download gives you access to the party bots in demo mode. You may purchase a license by clicking the buttoms around here to navigate to a stripe checkout screen.
+## What is Party Bots?
+
+Party Bots is an innovative application designed to automate trading on your favorite cryptocurrency exchanges.
+
+## 💡 Smart Trading, Simplified
+
+With Party Bots, you can confidently automate profitable trades across the crypto market. Acting as a seamless add-on to supported exchanges, our sophisticated system takes the complexity out of trading, managing your investments while you focus on what matters most.
+
+## 💸 Turn Capital Into Growth
+
+With Party Bots, your initial investment could yield returns of thousands of dollars per year—all while you sit back and let the bots do the work.
+
+### Supported Exchange
+
+- Swyftx
+
+We’re continuously expanding our supported exchanges, so stay tuned for more integrations!
+
+## Ready to Join the Party?
+
+Your download includes full access to Party Bots in Demo Mode, giving you a risk-free way to explore its capabilities. In demo mode, you'll
+
+## Live Mode
+
+Live mode is not generally available yet.
+
+🎉 Party Bots: Because trading should be fun AND profitable!

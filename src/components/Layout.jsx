@@ -12,7 +12,9 @@ const navigation = [
     {
         title: 'Introduction',
         links: [
-            { title: 'Warning: Gabling is an addiction', href: '/docs/0/disclaimers' },
+            { title: 'How To Use Party Bots', href: '/docs/0/how-to' },
+            { title: 'Warnings', href: '/docs/0/warnings' },
+            { title: 'Disclaimers', href: '/docs/0/disclaimers' },
         ],
     },
 ]
@@ -64,9 +66,9 @@ function Header({ navigation }) {
                     <HomeIcon className="dark:text-white" />
                 </Link>
                 <ThemeSelector className="relative z-10" />
-                <Link href="https://github.com/paulegradie/Party-Bot-Site" className="group" aria-label="GitHub">
+                {/* <Link href="https://github.com/paulegradie/Sailfish" className="group" aria-label="GitHub">
                     <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
-                </Link>
+                </Link> */}
             </div>
         </header>
     )
@@ -148,7 +150,12 @@ export function Layout({ children, title, tableOfContents }) {
                     <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
                     <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
                     <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
-
+                    <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
+                        <Navigation
+                            navigation={navigation}
+                            className="w-64 pr-8 xl:w-72 xl:pr-16"
+                        />
+                    </div>
                 </div>
                 <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
                     <article>
@@ -253,13 +260,6 @@ export function Layout({ children, title, tableOfContents }) {
                             </>
                         )}
                     </nav>
-
-                </div>
-                <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
-                    <Navigation
-                        navigation={navigation}
-                        className="w-64 pr-8 xl:w-72 xl:pr-16"
-                    />
                 </div>
             </div>
         </>
