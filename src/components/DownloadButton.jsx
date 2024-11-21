@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link'
 
 const extractWindowsVersion = (url) => {
     const match = url.match(/PartyBots-Windows-([\d.]+)\.zip/);
@@ -31,20 +32,20 @@ const DownloadSection = ({ windowsVersionLink, unixVersionLink, loading }) => {
             </div>
             {/* Button section */}
             <div className="flex gap-4">
-                <button
-                    href={windowsVersionLink}
+                <Link
+                    href={loading ? "" : windowsVersionLink}
                     disabled={loading || !windowsVersionLink}
                     className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 disabled:opacity-50"
                     >
                     {loading ? 'Loading...' : `Windows ${windowsVersion || ''}`}
-                </button>
-                <button
-                    href={unixVersionLink}
+                </Link>
+                <Link
+                    href={loading ? "" : unixVersionLink}
                     disabled={loading || !unixVersionLink}
                     className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 disabled:opacity-50"
                     >
                     {loading ? 'Loading...' : `Unix  ${unixVersion || ''}`}
-                </button>
+                </Link>
             </div>
         </div>
     );
