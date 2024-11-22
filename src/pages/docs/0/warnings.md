@@ -2,14 +2,13 @@
 title: Warnings
 ---
 
-# ⚠️ The Risks of Investing in Cryptocurrencies
+# ⚠️ Know The Risks of Investing in Cryptocurrencies
 
-Cryptocurrency markets are highly volatile and speculative, with prices that can experience dramatic fluctuations in a short period. While opportunities for profit exist, so do risks of substantial losses.
+Cryptocurrency markets are highly volatile and speculative, with prices that can experience dramatic fluctuations in a short period. While opportunities for profit exist, so do risks of substantial losses. Party Bot always issues stop loss orders - which should be a part of any trading strategy. When too many bots lose money, the system will automatical halt trading and assess general market conditions.
 
 ## Market Volatility
 
-Cryptocurrencies can experience rapid and unpredictable price changes, influenced by factors such as market sentiment, regulatory news, and technological developments.
-You may lose a significant portion—or even all—of your initial investment.
+Cryptocurrencies can experience rapid and unpredictable price changes, influenced by factors such as market sentiment, regulatory news, and technological developments. You may lose a significant portion—or even all—of your initial investment. Party Bots will attempt to mitigate losses to the best of its ability. This is NOT a substitute for diligent user monitoring of one's portfolio.
 
 ## Lack of Regulation
 
