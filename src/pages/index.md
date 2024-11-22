@@ -1,5 +1,5 @@
 ---
-title: 'Welcome!'
+title: ''
 ---
 
 # Welcome to Party Bots! 🎉
@@ -18,7 +18,7 @@ With Party Bots, you can confidently automate profitable trades across the crypt
 
 With Party Bots, your initial investment could yield returns of thousands of dollars per year—all while you sit back and let the bots do the work.
 
-### Supported Exchange
+### Supported Exchanges
 
 - Swyftx
 
@@ -26,10 +26,11 @@ We’re continuously expanding our supported exchanges, so stay tuned for more i
 
 ## Ready to Join the Party?
 
-Your download includes full access to Party Bots in Demo Mode, giving you a risk-free way to explore its capabilities. In demo mode, you'll
-
-## Live Mode
-
-Live mode is not generally available yet.
+Your download includes full access to Party Bots in Demo Mode, giving you a risk-free way to explore its capabilities. In demo mode, you'll experience the power of Party Bots against live price data, but fake money.
 
 🎉 Party Bots: Because trading should be fun AND profitable!
+
+
+## This is currently an MVP product
+
+Live mode is not generally available yet, but with enough interest, it will be made.
