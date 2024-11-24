@@ -1,7 +1,7 @@
 ---
-title: Disclaimers and Legal
+title: Legal Statements
 ---
-# Disclaimer and Indemnification Statement
+# Disclaimer and Indemnification
 
 By downloading, installing, and using the Party Bots application, you agree to the following terms and conditions:
 
