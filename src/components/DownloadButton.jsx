@@ -39,7 +39,7 @@ const DownloadSection = ({ windowsVersionLink, unixVersionLink, loading }) => {
     };
 
     return (
-        <div className="mt-8 flex flex-col gap-8 md:justify-center lg:justify-center items-center">
+        <div className="mt-8 flex flex-col gap-8 justify-center items-center">
             {/* Download text styled to be large, bold, and white */}
             <div className="text-4xl font-bold text-white">Download</div>
 
