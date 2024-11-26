@@ -81,23 +81,6 @@ export function Hero() {
                             <div className="mt-8 flex gap-4 justify-center ">
                                 <DownloadSection windowsVersionLink={windowsVersionLink} unixVersionLink={unixVersionLink} loading={loading} />
                             </div>
-                            {/* <div className="mt-8 flex gap-4 md:justify-center lg:justify-center">
-                                <Button
-                                    href={windowsVersionLink}
-                                    disabled={loading || !windowsVersionLink}
-                                >
-                                    {loading ? 'Loading...' : 'Windows'}
-                                </Button>
-                                <Button
-                                    href={unixVersionLink}
-                                    disabled={loading || !unixVersionLink}
-                                >
-                                    {loading ? 'Loading...' : 'Unix'}
-                                </Button>
-                                {/* <Button href="https://github.com/paulegradie/Party-Bots-Site" variant="secondary">
-                                    Get Previous Versions
-                                </Button> */}
-                            {/* </div> */}
                             {error && (
                                 <div className="mt-4 text-red-500">
                                     {error}

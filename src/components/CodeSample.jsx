@@ -4,21 +4,20 @@ import CodeBlock from '@/components/CodeBlock';
 import { TrafficLightsIcon } from './Hero';
 
 const config = `{
+{
     "user_id": "",
     "license_key": "",
     "demo_mode": true,
+    "strategy": "smart",
     "connection_string": "sqlite:///partybots.db",
+    "how_long_to_let_bot_run_in_seconds": 172800,
     "minimum_trust_fund_balance": 0.00,
-    "amount_of_AUD_to_invest": 250.0,
-    "the_percent_gain_to_sell_at": 3.5,
-    "the_percent_loss_to_sell_at": 60.0,
-    "asset_codes": [
-        "ETH",
-        "BTC",
-        "XRP",
-        "LTC"
-    ],
-    "max_bots_for_given_currency": 1,
+    "amount_of_AUD_to_invest_per_bot": 200.0,
+    "the_percent_gain_to_sell_at": 4.0,
+    "the_percent_loss_to_sell_at": 5.0,
+    "asset_codes": [],
+    "maximum_number_of_bots_per_asset": 2,
+    "maximum_total_number_of_bots_allowed": -1,
     "exchange_secrets": {
         "swyftx": {
             "SWYFTX_APIKEY": "",
