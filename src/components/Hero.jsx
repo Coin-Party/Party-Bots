@@ -5,6 +5,7 @@ import blurCyanImage from '@/images/blur-cyan.png';
 import blurIndigoImage from '@/images/blur-indigo.png';
 import logo from '@/images/logo.png';
 import { CodeSample } from './CodeSample';
+import { PurchaseButton } from './PurchaseButton';
 import { useState, useEffect } from 'react';
 import DownloadSection from '@/components/DownloadButton';
 export function TrafficLightsIcon(props) {
@@ -61,7 +62,6 @@ export function Hero() {
 
         fetchLatestVersions();
     }, []); // Empty dependency array means it runs once on mount
-
     return (
         <div className="overflow-hidden bg-slate-900 dark:-mb-32 dark:mt-[-4.5rem] dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
             <div className="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
@@ -69,6 +69,7 @@ export function Hero() {
                     <div className="relative z-10 md:text-center lg:text-left">
                         <div className="relative">
                             <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+                                {/* Your logo */}
                                 <Image
                                     className="rounded-lg shadow-inner"
                                     src={logo}
@@ -78,9 +79,14 @@ export function Hero() {
                                     priority
                                 />
                             </p>
-                            <div className="mt-8 flex gap-4 justify-center ">
-                                <DownloadSection windowsVersionLink={windowsVersionLink} unixVersionLink={unixVersionLink} loading={loading} />
+                            <div className="mt-8 flex gap-4 justify-center">
+                                <DownloadSection
+                                    windowsVersionLink={windowsVersionLink}
+                                    unixVersionLink={unixVersionLink}
+                                    loading={loading}
+                                />
                             </div>
+                            <PurchaseButton />
                             {error && (
                                 <div className="mt-4 text-red-500">
                                     {error}
@@ -89,12 +95,7 @@ export function Hero() {
                         </div>
                     </div>
                     <div className="relative lg:static xl:pl-10">
-                        <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 [mask-image:linear-gradient(transparent,white,white)] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:left-[calc(50%+14rem)] lg:right-0 lg:-top-32 lg:-bottom-32 lg:[mask-image:none] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
-                            <HeroBackground className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]" />
-                        </div>
-                        <div className="relative">
-                            <CodeSample />
-                        </div>
+                        <CodeSample />
                     </div>
                 </div>
             </div>

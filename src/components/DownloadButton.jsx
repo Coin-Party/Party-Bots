@@ -43,7 +43,8 @@ const DownloadSection = ({ windowsVersionLink, unixVersionLink, loading }) => {
             {/* Download text styled to be large, bold, and white */}
             <div className="text-4xl font-bold text-white">Download</div>
 
-            {/* Button section */}
+
+        
             <div className="flex gap-4">
                 <button
                     onClick={() => handleDownloadClick(windowsVersionLink)}
